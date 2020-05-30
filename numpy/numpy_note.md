@@ -32,10 +32,68 @@ l = [1,2,3,4]
 l+1
 ```
 ![image.png](../files/numpy_error1.png)
+```python
+l = [1,2,3,4]
+np.array(l) + 1
+```
+```
+array([2, 3, 4, 5])
+```
 ```python 
 l = ['a',1,2,3]
 np.array(l)
 ```
 ```
 array(['a', '1', '2', '3'], dtype='<U1')
+```
+## Create Numpy 
+Create numpy from List. 
+```
+a=np.array([1,2,3,4])
+print(a)
+print(a.ndim)
+print(a.shape)
+```
+```
+[1 2 3 4]
+1
+(4,)
+```
+Multi-dimension array:
+```python
+a=np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(a)
+print(a.shape)
+print(a.ndim)
+```
+```
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+(3, 3)
+2
+```
+Functions to create special np array.
+```
+a=np.arange(10)
+print(a)
+b=np.arange(1,100,20)
+print(b)
+print(np.linspace(0, 1, 6))
+print(np.ones((3, 3)))
+print(np.zeros((2, 2)))
+print(np.eye(3))
+```
+```
+[0 1 2 3 4 5 6 7 8 9]
+[ 1 21 41 61 81]
+[0.  0.2 0.4 0.6 0.8 1. ]
+[[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+[[0. 0.]
+ [0. 0.]]
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
 ```
