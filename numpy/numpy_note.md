@@ -237,3 +237,15 @@ array([[ 1.,  2.,  3.,  4.],
        [ 9., 10., 11., 12.],
        [13., 14., 15., 16.]])
 ```
+
+## Mathmetical functions
+Please check this [list](https://numpy.org/doc/1.18/reference/routines.math.html) for details.
+## Linear algebra 
+[numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html)
+
+## Random functions
+[numpy.random](https://numpy.org/doc/1.18/reference/random/index.html)
+
+
+
+
