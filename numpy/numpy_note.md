@@ -27,4 +27,8 @@ np.array(l)
 ```
 array([1, 2, 3, 4])
 ```
-
+```python 
+l = [1,2,3]
+l+1
+```
+![image.png](../files/numpy_erro1.png)
