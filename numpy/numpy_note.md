@@ -48,7 +48,7 @@ array(['a', '1', '2', '3'], dtype='<U1')
 ```
 ## Create Numpy 
 Create numpy from List. 
-```
+```python
 a=np.array([1,2,3,4])
 print(a)
 print(a.ndim)
@@ -74,7 +74,7 @@ print(a.ndim)
 2
 ```
 Functions to create special np array.
-```
+```python
 a=np.arange(10)
 print(a)
 b=np.arange(1,100,20)
@@ -97,3 +97,13 @@ print(np.eye(3))
  [0. 1. 0.]
  [0. 0. 1.]]
 ```
+We can also create the diag matrix by 
+```python
+np.diag(np.array([1, 2, 3, 4]))
+```
+Create numpy array from **np.random**:
+```python
+np.random.rand(3,4)
+```
+to create shape=(3,4) array.
+
