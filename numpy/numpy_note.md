@@ -182,6 +182,7 @@ When operating on two arrays, NumPy compares their shapes element-wise. It start
 * they are equal, or
 * one of them is 1
 When either of the dimensions compared is one, the other is used. In other words, dimensions with size 1 are stretched or “copied” to match the other.
+
 Examples:
 ```
 Image  (3d array): 256 x 256 x 3
@@ -214,4 +215,25 @@ A      (3d array):  15 x 3 x 5
 B      (2d array):       3 x 1
 Result (3d array):  15 x 3 x 5
 ```
-
+```python
+a = np.arange(16).reshape(4,4)
+print('a is: ',a)
+b = np.ones(shape=4)
+print('b is:',b)
+```
+```
+a is:  [[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]]
+b is: [1. 1. 1. 1.]
+```
+```python
+a+b
+```
+```
+array([[ 1.,  2.,  3.,  4.],
+       [ 5.,  6.,  7.,  8.],
+       [ 9., 10., 11., 12.],
+       [13., 14., 15., 16.]])
+```
