@@ -175,3 +175,43 @@ array([[ 0,  1,  2,  3,  4],
        [20, 21, 22, 23, 24],
        [25, 26, 27, 28, 29]])
 ```
+
+## [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)
+The term broadcasting describes how numpy treats arrays with different shapes during arithmetic operations.
+When operating on two arrays, NumPy compares their shapes element-wise. It starts with the trailing dimensions and works its way forward. Two dimensions are compatible when
+* they are equal, or
+* one of them is 1
+When either of the dimensions compared is one, the other is used. In other words, dimensions with size 1 are stretched or “copied” to match the other.
+Examples:
+```
+Image  (3d array): 256 x 256 x 3
+Scale  (1d array):             3
+Result (3d array): 256 x 256 x 3
+```
+```
+A      (4d array):  8 x 1 x 6 x 1
+B      (3d array):      7 x 1 x 5
+Result (4d array):  8 x 7 x 6 x 5
+```
+```
+A      (2d array):  5 x 4
+B      (1d array):      1
+Result (2d array):  5 x 4
+
+A      (2d array):  5 x 4
+B      (1d array):      4
+Result (2d array):  5 x 4
+
+A      (3d array):  15 x 3 x 5
+B      (3d array):  15 x 1 x 5
+Result (3d array):  15 x 3 x 5
+
+A      (3d array):  15 x 3 x 5
+B      (2d array):       3 x 5
+Result (3d array):  15 x 3 x 5
+
+A      (3d array):  15 x 3 x 5
+B      (2d array):       3 x 1
+Result (3d array):  15 x 3 x 5
+```
+
