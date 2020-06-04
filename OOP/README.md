@@ -1,4 +1,6 @@
 # Note for Object Oriented Programming in Python
+The notes are summarized from this [blog](https://github.com/HJSang/Python-100-Days/blob/master/Day01-15/09.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6.md).
+
 ## Class and Instance
 
 In Python, **class** is used to define the class object. For example,
@@ -90,6 +92,37 @@ def main():
 if __name__ == '__main__':
   main()
 ```
+
+## __slot__
+We can use **__slot__** to limit the attributes. 
+```python
+Class Person:
+  __slot__ = ('_name', '_age', '_gender')
+  
+  def __init__(self, name, age):
+    self._name = name
+    self._age = age
+
+  @property
+  def name(self):
+    return self._name
+
+  @property
+  def age(self):
+    return self._age
+
+  
+  @ag.esetter
+  def age(self,age):
+    self._age = age
+
+def main():
+  person = Person('xxx', 22)
+  person._gender = 'male'
+  # AttributeError: 'Person' object has no attribute '_who'
+  # person._who = 'nobody'
+```
+
 
 
 
