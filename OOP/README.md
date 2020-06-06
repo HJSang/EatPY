@@ -124,7 +124,40 @@ def main():
 ```
 
 
+## Static and class methods
+This is summarized from this [stack overflow blog](https://stackoverflow.com/questions/136097/difference-between-staticmethod-and-classmethod#:~:text=%40staticmethod%20function%20is%20nothing%20more,a%20bound%2Dmethod%20for%20object.)
 
+A **staticmethod** is a method that knows nothing about the class or instance it was called on. It is callable without instantiating the class first. It's definitionis immutable via inheritance.
+
+**Classmethod** function also callable without instantiating the class, but its definition follows Sub class, not Parent class via inheritance. Th is beclasee the first argument for @classmethod function must always be **cls** (class).
+
+Both methods are used by **decorators** @classmethod and @staticmethod.
+
+```python
+class Triangle:
+  def __init__(self,a,b,c):
+    self._a = a
+    self._b = b
+    self._c = c
+
+  @staticmethod
+  def is_valid(a,b,c):
+    return a+b>c and b+c>a and a+c>b
+
+  def perimeter(self):
+    return self._a + self._b + self._c
+
+def main():
+  a,b,c = 3,4,5
+  if Triangle.is_valid(a,b,c):
+    t = Triangle(a,b,c)
+    print(t.perimeter())
+  else:
+    print('Not a Triangle!')
+
+if __name__ == '__main__':
+  main()
+``` 
 
        
 
